@@ -5,18 +5,31 @@
  */
 package view;
 
+import controller.ControllerImp;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.MatHang;
+
 /**
  *
  * @author ADMIN
  */
-public class HomeFrm extends javax.swing.JFrame {
+public class HomeFrm extends javax.swing.JFrame implements View {
 
-    /**
-     * Creates new form HomeFrm
-     */
+    private List<MatHang> items;
+    private DefaultTableModel modelMatHang;
+    private controller.Controller controller;
+    
     public HomeFrm() {
         initComponents();
+        items = new ArrayList<>();
+        modelMatHang = (DefaultTableModel) tblMatHang.getModel();
+        controller = new ControllerImp();
+        loadMH();
     }
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,21 +40,135 @@ public class HomeFrm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblMatHang = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtTenMH = new javax.swing.JTextField();
+        txtGia = new javax.swing.JTextField();
+        comboNhomHang = new javax.swing.JComboBox<>();
+        btnThemMH = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tblMatHang.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Ma MH", "Ten MH", "Loai MH", "Gia Ban"
+            }
+        ));
+        jScrollPane1.setViewportView(tblMatHang);
+
+        jLabel1.setText("Ten MH:");
+
+        jLabel2.setText("Gia Ban: ");
+
+        jLabel3.setText("Nhom Hang: ");
+
+        comboNhomHang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PT giao thong", "Do may mac", "Do gia dung", "TB Cong nghe cao", "Thuc pham" }));
+
+        btnThemMH.setText("Them moi");
+        btnThemMH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemMHActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtTenMH)
+                    .addComponent(txtGia)
+                    .addComponent(comboNhomHang, 0, 247, Short.MAX_VALUE))
+                .addGap(110, 110, 110)
+                .addComponent(btnThemMH)
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtTenMH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnThemMH))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(comboNhomHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 49, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("QL Mat Hang", jPanel1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 686, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 436, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnThemMHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemMHActionPerformed
+        // TODO add your handling code here:
+        String tenMH = txtTenMH.getText();
+        String gia = txtGia.getText();
+        String nhomMH = comboNhomHang.getSelectedItem().toString();
+        if(tenMH.length() > 0 && gia.length() > 0) {
+            if(gia.matches("\\d+")) {
+                // gia ban hop le
+                float giaBan = Float.parseFloat(gia);
+                MatHang m = new MatHang(giaBan, gia, nhomMH);
+                items.add(m);
+                this.showData(items, modelMatHang);
+                controller.writeToFile(items, "MH.txt");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Gia ban chi co the la so!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Thong tin khong duoc bo trong!");
+        }
+    }//GEN-LAST:event_btnThemMHActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +206,39 @@ public class HomeFrm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnThemMH;
+    private javax.swing.JComboBox<String> comboNhomHang;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable tblMatHang;
+    private javax.swing.JTextField txtGia;
+    private javax.swing.JTextField txtTenMH;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public <T> void showData(List<T> data, DefaultTableModel model) {
+        model.setRowCount(0);
+        for (T t : data) {
+            if(t instanceof MatHang) {
+                model.addRow(new Object[]{
+                    ((MatHang) t).getId(), ((MatHang) t).getName(), 
+                    ((MatHang) t).getType(), ((MatHang) t).getPrice()
+                });
+            }
+        }
+    }
+
+    private void loadMH() {
+        items.addAll(controller.readDataFromFile("MH.txt"));
+        this.showData(items, modelMatHang);
+        if(items.size() > 0) {
+            MatHang.setsId(items.get(items.size() - 1).getId() + 1);
+        }
+    }
+
 }
