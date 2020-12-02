@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,24 +19,51 @@ public class HoaDon implements Serializable {
     private static int sId = 1000000;
     private Date date;
     private KhachHang customer;
-    private List<Pair<KhachHang, MatHang>> items;
-    private float totalPrice;
-    private int totalItems;
+    private List<Pair<MatHang,Integer>> pairs;
+    private int totalPrice;
+    private MatHang item;
+    private int soLuong;
 
     public HoaDon() {
+    	pairs= new ArrayList<>();
+    	totalPrice=0;
     }
+    
 
-    public HoaDon(Date date, KhachHang customer, 
-            List<Pair<KhachHang, MatHang>> items, 
-            float totalPrice, int totalItems) {
-        this.date = date;
-        this.customer = customer;
-        this.items = items;
-        this.totalPrice = totalPrice;
-        this.totalItems = totalItems;
-    }
+	
 
-    public int getId() {
+
+
+	public HoaDon(KhachHang customer, MatHang item, int soLuong) {
+		super();
+		this.customer = customer;
+		this.item = item;
+		this.soLuong = soLuong;
+	}
+
+
+
+
+
+
+	public HoaDon(int id, Date date, KhachHang customer, Pair pair) {
+		this();
+		this.id = id;
+		this.date = date;
+		this.customer = customer;
+		this.totalPrice = totalPrice;
+		this.pairs.add(pair);
+	}
+	
+    public List<Pair<MatHang,Integer>> getPairs() {
+		return pairs;
+	}
+
+	public void setPairs(Pair pair) {
+		this.pairs.add(pair);
+	}
+
+	public int getId() {
         return id;
     }
 
@@ -59,37 +87,72 @@ public class HoaDon implements Serializable {
         this.date = date;
     }
 
-    public KhachHang getCustomer() {
-        return customer;
+  
+
+ 
+
+    public MatHang getItem() {
+		return item;
+	}
+
+
+
+
+
+
+	public void setItem(MatHang item) {
+		this.item = item;
+	}
+
+
+
+
+
+
+	public KhachHang getCustomer() {
+		return customer;
+	}
+
+
+
+	public void setCustomer(KhachHang customer) {
+		this.customer = customer;
+	}
+
+
+
+	public int getTotalPrice() {
+    	this.totalPrice=0;
+    	/*
+    	for(Pair<MatHang,Integer> pair : pairs){
+    		this.totalPrice=(int) (pair.getSoLuong()*pair.getMatHang().getPrice());
+    	}*/
+    	
+        return totalPrice= (int) (item.getPrice()*soLuong);
     }
 
-    public void setCustomer(KhachHang customer) {
-        this.customer = customer;
-    }
-
-    public List<Pair<KhachHang, MatHang>> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Pair<KhachHang, MatHang>> items) {
-        this.items = items;
-    }
-
-    public float getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(float totalPrice) {
+    public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public int getTotalItems() {
-        return totalItems;
-    }
 
-    public void setTotalItems(int totalItems) {
-        this.totalItems = totalItems;
-    }
-    
+
+
+
+
+	public int getSoLuong() {
+		return soLuong;
+	}
+
+
+
+
+
+
+	public void setSoLuong(int soLuong) {
+		this.soLuong = soLuong;
+	}
+
+   
     
 }

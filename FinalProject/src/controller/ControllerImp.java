@@ -6,6 +6,12 @@
 package controller;
 
 import com.sun.corba.se.impl.io.IIOPOutputStream;
+
+import model.HoaDon;
+import model.KhachHang;
+import model.MatHang;
+import model.Pair;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -14,6 +20,7 @@ import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -64,15 +71,17 @@ public class ControllerImp implements Controller {
         }
         return list;
     }
+    
+    
 
     @Override
-    public <T> List<T> sortByName(List<T> list) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public <T> void sortByName(List<T> list) {
+      
     }
 
     @Override
-    public <T> List<T> sortByQuantity(List<T> list) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public <T> void sortByQuantity(List<T> list) {
+       
     }
 
     @Override

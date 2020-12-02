@@ -11,32 +11,35 @@ import java.io.Serializable;
  *
  * @author ADMIN
  */
-public class Pair<MatHang, Integer> implements Serializable {
-    private MatHang key;
-    private Integer value;
-
+public class Pair<K, V> implements Serializable {
+    private K matHang;
+    private V soLuong;
+    
     public Pair() {
     }
 
-    public Pair(MatHang key, Integer value) {
-        this.key = key;
-        this.value = value;
-    }
+	public Pair(K matHang, V soLuong) {
+		super();
+		this.matHang = matHang;
+		this.soLuong = soLuong;
+	}
 
-    public MatHang getKey() {
-        return key;
-    }
+	public K getMatHang() {
+		return matHang;
+	}
 
-    public void setKey(MatHang key) {
-        this.key = key;
-    }
+	public void setMatHang(K matHang) {
+		this.matHang = matHang;
+	}
 
-    public Integer getValue() {
-        return value;
-    }
+	public V getSoLuong() {
+		return soLuong;
+	}
 
-    public void setValue(Integer value) {
-        this.value = value;
-    }
+	public void setSoLuong(V soLuong) {
+		this.soLuong = soLuong;
+	}
+
+    
     
 }
