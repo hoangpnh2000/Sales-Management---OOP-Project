@@ -17,7 +17,7 @@ import java.util.List;
 public class HoaDon implements Serializable {
     private int id;
     private static int sId = 1000000;
-    private Date date;
+    private String date;
     private KhachHang customer;
     private List<Pair<MatHang,Integer>> pairs;
     private int totalPrice;
@@ -30,30 +30,23 @@ public class HoaDon implements Serializable {
     }
     
 
-	
 
 
 
-	public HoaDon(KhachHang customer, MatHang item, int soLuong) {
+
+	public HoaDon(KhachHang customer, MatHang item, int soLuong,String date) {
 		super();
 		this.customer = customer;
 		this.item = item;
 		this.soLuong = soLuong;
-	}
-
-
-
-
-
-
-	public HoaDon(int id, Date date, KhachHang customer, Pair pair) {
-		this();
-		this.id = id;
 		this.date = date;
-		this.customer = customer;
-		this.totalPrice = totalPrice;
-		this.pairs.add(pair);
 	}
+
+
+
+
+
+
 	
     public List<Pair<MatHang,Integer>> getPairs() {
 		return pairs;
@@ -79,11 +72,11 @@ public class HoaDon implements Serializable {
         HoaDon.sId = sId;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

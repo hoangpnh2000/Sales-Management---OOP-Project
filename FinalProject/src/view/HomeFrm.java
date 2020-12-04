@@ -8,6 +8,8 @@ package view;
 import controller.ControllerImp;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -16,6 +18,8 @@ import javax.swing.JButton;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -116,13 +120,13 @@ public class HomeFrm extends javax.swing.JFrame implements View {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tblMatHang.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Ma MH", "Ten MH", "Loai MH", "Gia Ban"
-            }
+        tblMatHang.setModel(new DefaultTableModel(
+        	new Object[][] {
+        		{null, null, null, null},
+        	},
+        	new String[] {
+        		"Ma MH", "Ten MH", "Loai MH", "Gia Ban"
+        	}
         ));
         jScrollPane1.setViewportView(tblMatHang);
 
@@ -153,21 +157,46 @@ public class HomeFrm extends javax.swing.JFrame implements View {
         		
         	}
         });
+        
+        JLabel lblSapXep = new JLabel("Sap xep");
+        
+        JComboBox comboSort = new JComboBox();
+        comboSort.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		int index = comboSort.getSelectedIndex();
+                if (index == 0) {
+                	Collections.sort(items, new Comparator<MatHang>() {
+                        
+						@Override
+						public int compare(MatHang o1, MatHang o2) {
+							return o1.getName().compareTo(o2.getName());
+						}
+                    });
+                } else if (index == 1) {
+                    controller.sortByPrice(items);
+                } 
+                showData(items, modelMatHang);
+        	}
+        });
+        comboSort.setModel(new DefaultComboBoxModel(new String[] {"theo ten", "theo gia"}));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1Layout.setHorizontalGroup(
         	jPanel1Layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(jPanel1Layout.createSequentialGroup()
         			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-        				.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
+        				.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 1179, Short.MAX_VALUE)
         				.addGroup(jPanel1Layout.createSequentialGroup()
         					.addGap(69)
         					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
         						.addComponent(jLabel1)
         						.addComponent(jLabel2)
-        						.addComponent(jLabel3))
+        						.addComponent(jLabel3)
+        						.addComponent(lblSapXep, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
         					.addGap(38)
         					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
+        						.addComponent(comboSort, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         						.addComponent(txtTenMH)
         						.addComponent(txtGia)
         						.addComponent(comboNhomHang, 0, 247, Short.MAX_VALUE))
@@ -195,7 +224,11 @@ public class HomeFrm extends javax.swing.JFrame implements View {
         				.addComponent(jLabel3)
         				.addComponent(comboNhomHang, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         				.addComponent(btnXoa))
-        			.addContainerGap(62, Short.MAX_VALUE))
+        			.addGap(39)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(lblSapXep)
+        				.addComponent(comboSort, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap(132, Short.MAX_VALUE))
         );
         jPanel1.setLayout(jPanel1Layout);
 
@@ -233,20 +266,31 @@ public class HomeFrm extends javax.swing.JFrame implements View {
         		String phone = txtPhone.getText();
         		String diaChi = txtDiaChi.getText();
         		String mail = txtEmail.getText();
-        		
+        		int count=0;
                 if(tenKH.length() > 0 && phone.length() > 0 && diaChi.length() > 0 && mail.length() > 0) {
-                    
-                        
+                	for(KhachHang customer: customers) {
+    					if(tenKH.matches(customer.getName())) {
+    						JOptionPane.showMessageDialog(rootPane, "Ten khong the trung nhau");
+    						count=5;
+    					}
+    					if(mail.matches(customer.getEmail())) {
+    						JOptionPane.showMessageDialog(rootPane, "Ten khong the trung nhau");
+    						count=3;
+    					}
+    					}
+                        if(count==0) {
                         KhachHang h = new KhachHang(tenKH, diaChi, mail, phone);
                         customers.add(h);
                         showData( customers,modelKhachHang);
                         controller.writeToFile(customers, "KH.txt");
-                    
+                        }
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Thong tin khong duoc bo trong!");
                 }
-        		
-        		
+                txtTenKH.setText("");
+                txtPhone.setText("");
+                txtDiaChi.setText("");
+                txtEmail.setText("");
         		
         	}
         });
@@ -274,6 +318,27 @@ public class HomeFrm extends javax.swing.JFrame implements View {
         
         txtEmail = new JTextField();
         txtEmail.setColumns(10);
+                
+                comboSortKH = new JComboBox();
+                comboSortKH.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+                		int index = comboSortKH.getSelectedIndex();
+                        if (index == 0) {
+                        	Collections.sort(customers, new Comparator<KhachHang>() {
+                               
+        						@Override
+        						public int compare(KhachHang o1, KhachHang o2) {
+        							return o1.getName().compareTo(o2.getName());
+        						}
+                            });
+                        }
+                        showData(customers, modelKhachHang);
+                		
+                	}
+                });
+                comboSortKH.setModel(new DefaultComboBoxModel(new String[] {"theo ten"}));
+                
+                lblSapXep_1 = new JLabel("Sap xep");
         
                 javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
                 jPanel2Layout.setHorizontalGroup(
@@ -304,10 +369,14 @@ public class HomeFrm extends javax.swing.JFrame implements View {
                 									.addGap(334)
                 									.addComponent(btnXoa_1, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE))))
                 						.addGroup(jPanel2Layout.createSequentialGroup()
-                							.addComponent(lblNewLabel_1)
-                							.addGap(90)
-                							.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
-                				.addComponent(jScrollPane1_1, GroupLayout.PREFERRED_SIZE, 1167, GroupLayout.PREFERRED_SIZE))
+                							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+                								.addComponent(lblNewLabel_1)
+                								.addComponent(lblSapXep_1, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+                							.addGap(58)
+                							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+                								.addComponent(comboSortKH, GroupLayout.PREFERRED_SIZE, 247, GroupLayout.PREFERRED_SIZE)
+                								.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))))
+                				.addComponent(jScrollPane1_1, GroupLayout.PREFERRED_SIZE, 1381, GroupLayout.PREFERRED_SIZE))
                 			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
                 jPanel2Layout.setVerticalGroup(
@@ -343,7 +412,11 @@ public class HomeFrm extends javax.swing.JFrame implements View {
                 			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
                 				.addComponent(lblNewLabel_1)
                 				.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
-                			.addContainerGap(174, Short.MAX_VALUE))
+                			.addGap(52)
+                			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+                				.addComponent(lblSapXep_1)
+                				.addComponent(comboSortKH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                			.addContainerGap(106, Short.MAX_VALUE))
                 );
                 
                 tblKhachHang = new JTable();
@@ -365,16 +438,16 @@ public class HomeFrm extends javax.swing.JFrame implements View {
                         panel.setLayout(null);
                         
                         scrollPane = new JScrollPane();
-                        scrollPane.setBounds(525, 13, 666, 325);
+                        scrollPane.setBounds(525, 13, 868, 325);
                         panel.add(scrollPane);
                         
                         tblHoaDon = new JTable();
                         tblHoaDon.setModel(new DefaultTableModel(
                         	new Object[][] {
-                        		{null, null, null, null, null, null, null},
+                        		{null, null, null, null, null, null, null, null},
                         	},
                         	new String[] {
-                        		"MaKH", "TenKH", "MaMH", "TenMH", "Gia", "So Luong", "Tong Gia"
+                        		"Date", "MaKH", "TenKH", "MaMH", "TenMH", "Gia", "So Luong", "Tong Gia"
                         	}
                         ));
                         scrollPane.setViewportView(tblHoaDon);
@@ -385,31 +458,84 @@ public class HomeFrm extends javax.swing.JFrame implements View {
                         		
                         		int KHIndex = tblKH.getSelectedRow();
                         		int MHIndex = tblMH.getSelectedRow();
+                        		String check=txtSL.getText();
+                        		 
+                        		int day=Integer.parseInt( txtDate.getText()); 
+                        		int month= Integer.parseInt( txtMonth.getText());
+                        		int year= Integer.parseInt( txtYear.getText());
+                   
+                        		String date= day+"/"+month+"/"+year;
+                        		
+                        		int count=0;
+                        		
+                        		if(check.length()>0 && date.length()>0 ) {
+                        			if(month<12) {
+                        				if((month==1 || month== 3 || month== 5 || month== 7 || month==8 || month== 10|| month== 12) && day>0 && day<31 ) {
+                        					count=5;
+
+                        				}else if((month==4 || month== 6 || month== 9 || month== 11 ) && day>0 && day<30 ) {
+                        					count=5;
+                        				}else if(month==2 && year %4 ==0 && day>0 && day<30) {
+                        					
+                        					count=5;
+                        				
+                        				}else if((month==2 && year %4 !=0 && day>0 && day<29)) {
+                        					count=5;
+                        				}
+                        				else {
+                        					JOptionPane.showMessageDialog(rootPane, "Ngay bi sai");
+                        					count=2;
+                        				}
+                        			
+                        			}else {
+                        				JOptionPane.showMessageDialog(rootPane, "Thang bi sai");
+                        				count=2;
+                        				
+                        			}
+                        			
+                        		if(count==5) {	
+                        			
                         		int quantities=Integer.parseInt(txtSL.getText());
                         		
                         		if(KHIndex == -1 || MHIndex == -1) {
                         			JOptionPane.showMessageDialog(rootPane, "Hay chon khach hang hoac mat hang");
-                        		
+                        	
                        
                         		}else {
-                        			
-                        			KhachHang khachHang = customers1.get(KHIndex);
+                          			KhachHang khachHang = customers1.get(KHIndex);
                         			MatHang matHang= items1.get(MHIndex);
-                        			//Pair<MatHang,Integer> pair= new Pair(matHang,quantities);
-                        			HoaDon m= new HoaDon(khachHang,matHang, quantities);
+                        			
+                        			HoaDon m= new HoaDon(khachHang,matHang, quantities,date);
                                     bills.add(m);
                                      
                                      showData(bills, modelHoaDon);
                                  	controller.writeToFile(bills, "HD.txt");
+                        		}}}else {
+                        			JOptionPane.showMessageDialog(rootPane, "Hay nhap du khung");
                         		}
+                        		txtSL.setText("");
                         		
-                        	}
+                        		}
+                        	
+                        	
                         });
-                        btnNewButton.setBounds(581, 394, 97, 25);
+                        btnNewButton.setBounds(1071, 390, 97, 25);
                         panel.add(btnNewButton);
                         
                         JButton btnNewButton_1 = new JButton("Xoa");
-                        btnNewButton_1.setBounds(754, 394, 97, 25);
+                        btnNewButton_1.addActionListener(new ActionListener() {
+                        	public void actionPerformed(ActionEvent e) {
+                        		
+
+                        		int removeIndex = tblHoaDon.getSelectedRow();
+                        		bills.remove(removeIndex);
+                				showData(bills, modelHoaDon);
+                				controller.writeToFile(bills, "HD.txt");
+                        		
+                        		
+                        	}
+                        });
+                        btnNewButton_1.setBounds(1071, 524, 97, 25);
                         panel.add(btnNewButton_1);
                         
                         jScrollPane1_2 = new JScrollPane();
@@ -442,13 +568,63 @@ public class HomeFrm extends javax.swing.JFrame implements View {
                         
                         jLabel5 = new JLabel();
                         jLabel5.setText("Số lượt lái: ");
-                        jLabel5.setBounds(314, 394, 67, 16);
+                        jLabel5.setBounds(719, 394, 67, 16);
                         panel.add(jLabel5);
                         
                         txtSL = new JTextField();
                         txtSL.setColumns(10);
-                        txtSL.setBounds(410, 391, 116, 22);
+                        txtSL.setBounds(844, 391, 116, 22);
                         panel.add(txtSL);
+                        
+                        comboSortHD = new JComboBox();
+                        comboSortHD.setBounds(221, 505, 247, 22);
+                        panel.add(comboSortHD);
+                        
+                        lblSapXep_2 = new JLabel("Sap xep");
+                        lblSapXep_2.setBounds(100, 508, 63, 16);
+                        panel.add(lblSapXep_2);
+                        
+                        btnRefresh = new JButton("Refresh");
+                        btnRefresh.addActionListener(new ActionListener() {
+                        	public void actionPerformed(ActionEvent e) {
+                        		
+                        		
+                        		customers1.clear();
+                        		showCustomer();
+                        		
+                        	}
+                        });
+                        btnRefresh.setBounds(55, 351, 97, 25);
+                        panel.add(btnRefresh);
+                        
+                        btnRefresh_1 = new JButton("Refresh");
+                        btnRefresh_1.addActionListener(new ActionListener() {
+                        	public void actionPerformed(ActionEvent e) {
+                        		items1.clear();
+                        		showItems();
+                        	}
+                        });
+                        btnRefresh_1.setBounds(314, 356, 97, 25);
+                        panel.add(btnRefresh_1);
+                        
+                        lblDay = new JLabel("Date(dd/mm/yyyy)");
+                        lblDay.setBounds(724, 459, 108, 16);
+                        panel.add(lblDay);
+                        
+                        txtDate = new JTextField();
+                        txtDate.setBounds(844, 456, 30, 22);
+                        panel.add(txtDate);
+                        txtDate.setColumns(10);
+                        
+                        txtMonth = new JTextField();
+                        txtMonth.setBounds(897, 456, 41, 22);
+                        panel.add(txtMonth);
+                        txtMonth.setColumns(10);
+                        
+                        txtYear = new JTextField();
+                        txtYear.setBounds(948, 456, 55, 22);
+                        panel.add(txtYear);
+                        txtYear.setColumns(10);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -458,20 +634,32 @@ public class HomeFrm extends javax.swing.JFrame implements View {
         String tenMH = txtTenMH.getText();
         String gia = txtGia.getText();
         String nhomMH = comboNhomHang.getSelectedItem().toString();
+        int count=0;
         if(tenMH.length() > 0 && gia.length() > 0) {
             if(gia.matches("\\d+")) {
+            	
+            	for(MatHang product: items) {
+					if(tenMH.matches(product.getName())) {
+						JOptionPane.showMessageDialog(rootPane, "Ten khong the trung nhau");
+						count=5;
+					}	
+					}
+            	if(count==0) {
                 // gia ban hop le
                 float giaBan = Float.parseFloat(gia);
                 MatHang m = new MatHang(giaBan, nhomMH,tenMH);
                 items.add(m);
                 this.showData(items, modelMatHang);
                 controller.writeToFile(items, "MH.txt");
+            	}
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Gia ban chi co the la so!");
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Thong tin khong duoc bo trong!");
         }
+        txtTenMH.setText("");
+        txtGia.setText("");
     }//GEN-LAST:event_btnThemMHActionPerformed
 
     /**
@@ -537,6 +725,16 @@ public class HomeFrm extends javax.swing.JFrame implements View {
     private JTable tblMH;
     private JLabel jLabel5;
     private JTextField txtSL;
+    private JComboBox comboSortKH;
+    private JLabel lblSapXep_1;
+    private JComboBox comboSortHD;
+    private JLabel lblSapXep_2;
+    private JButton btnRefresh;
+    private JButton btnRefresh_1;
+    private JLabel lblDay;
+    private JTextField txtDate;
+    private JTextField txtMonth;
+    private JTextField txtYear;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -565,7 +763,7 @@ public class HomeFrm extends javax.swing.JFrame implements View {
                         });
 				}*/
             	model.addRow(new Object[]{
-                        h.getCustomer().getId(),h.getCustomer().getName(),
+                        h.getDate(),h.getCustomer().getId(),h.getCustomer().getName(),
                         h.getItem().getId(),h.getItem().getName(),h.getItem().getPrice(),
                         h.getSoLuong(),h.getTotalPrice()
             });}
@@ -619,4 +817,5 @@ public class HomeFrm extends javax.swing.JFrame implements View {
 			
 		}
 
-}}
+}	
+}

@@ -18,7 +18,7 @@ public interface Controller {
     
     <T> void sortByName(List<T> list);
     
-    <T> void sortByQuantity(List<T> list);
+    <T> void sortByPrice(List<T> list);
     
     <T> List<T> searchByName(List<T> list, String key);
 }

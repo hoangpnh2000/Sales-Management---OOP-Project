@@ -76,11 +76,28 @@ public class ControllerImp implements Controller {
 
     @Override
     public <T> void sortByName(List<T> list) {
-      
+    	
     }
 
     @Override
-    public <T> void sortByQuantity(List<T> list) {
+    public <T> void sortByPrice(List<T> list) {
+    	list.sort(new Comparator<T>() {
+            @Override
+            public int compare(T o1, T o2) {
+                if (o1 instanceof MatHang) {
+                	MatHang m1 = (MatHang) o1;
+                	MatHang m2 = (MatHang) o2;
+                    float d1 = m1.getPrice();
+                    float d2 =  m2.getPrice();
+                    if(d1 > d2) {
+                        return -1;
+                    } else if(d1 < d2) {
+                        return 1;
+                    }
+                }
+                return 0;
+            }
+        });
        
     }
 
