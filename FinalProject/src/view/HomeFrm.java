@@ -182,46 +182,141 @@ public class HomeFrm extends javax.swing.JFrame implements View {
 			}
 		});
 		comboSort.setModel(new DefaultComboBoxModel(new String[] { "Product's Name", "Price" }));
+		
+		JLabel lblId = new JLabel("ID");
+		lblId.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		JLabel lblName = new JLabel("Name");
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		JLabel lblType = new JLabel("Type");
+		lblType.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		JLabel lblPrice = new JLabel("Price");
+		lblPrice.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		textField = new JTextField();
+		textField.setEnabled(false);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setEnabled(false);
+		textField_2.setColumns(10);
+		
+		textField_3 = new JTextField();
+		textField_3.setEnabled(false);
+		textField_3.setColumns(10);
+		
+		JButton btnNewButton_2 = new JButton("Search");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String Name = textField_1.getText();
+				int count=0;
+				int find=0;
+				for(MatHang product: items) {
+					if(Name.matches(product.getName())) {
+						
+						textField.setText("" + items.get(count).getId());	
+						textField_2.setText("" + items.get(count).getType());	
+						textField_3.setText("" + items.get(count).getPrice());	
+						find=4;
+					}count++;
+				
+				}if(find!=4) {
+					JOptionPane.showMessageDialog(rootPane, "Do not have that information");
+					textField_1.setText("");
+				}
+				
+			}
+		});
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout
-				.createSequentialGroup()
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 1393, Short.MAX_VALUE)
-						.addGroup(jPanel1Layout.createSequentialGroup().addGap(69)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(jLabel1)
-										.addComponent(jLabel2).addComponent(jLabel3).addComponent(lblSapXep,
-												GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-								.addGap(38)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(comboSort, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(txtTenMH).addComponent(txtGia)
-										.addComponent(comboNhomHang, 0, 247, Short.MAX_VALUE))
-								.addGap(93)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING, false)
-										.addComponent(btnThemMH, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addComponent(btnXoa, GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))))
-				.addContainerGap()));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout
-				.createSequentialGroup()
-				.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE).addGap(33)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel1).addComponent(
-						txtTenMH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-				.addGap(20)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel2)
-						.addComponent(txtGia, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnThemMH))
-				.addGap(22)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel3)
-						.addComponent(comboNhomHang, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnXoa))
-				.addGap(39)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(lblSapXep).addComponent(
-						comboSort, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-				.addContainerGap(164, Short.MAX_VALUE)));
+		jPanel1Layout.setHorizontalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 1464, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addGap(69)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(jLabel1)
+						.addComponent(jLabel2)
+						.addComponent(jLabel3)
+						.addComponent(lblSapXep, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+					.addGap(38)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(comboSort, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(txtTenMH)
+						.addComponent(txtGia)
+						.addComponent(comboNhomHang, 0, 247, Short.MAX_VALUE))
+					.addGap(93)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(btnThemMH, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnXoa, GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+					.addGap(261)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblId, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblName, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblType)
+						.addComponent(lblPrice))
+					.addGap(86)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+							.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+							.addGap(95))
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addContainerGap(0, Short.MAX_VALUE))))
+		);
+		jPanel1Layout.setVerticalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addGap(33)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(jLabel1)
+								.addComponent(txtTenMH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(20)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(jLabel2)
+								.addComponent(txtGia, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnThemMH)
+								.addComponent(lblId)
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(22)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(jLabel3)
+								.addComponent(comboNhomHang, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnXoa)
+								.addComponent(lblName)
+								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(18)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblType)
+								.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(5)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblSapXep)
+								.addComponent(comboSort, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(10)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblPrice)
+								.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addGap(145)
+							.addComponent(btnNewButton_2)))
+					.addContainerGap(138, Short.MAX_VALUE))
+		);
 		jPanel1.setLayout(jPanel1Layout);
 
 		jTabbedPane1.addTab("Product Manager", jPanel1);
@@ -345,16 +440,72 @@ public class HomeFrm extends javax.swing.JFrame implements View {
 
 		lblSapXep_1 = new JLabel("Sort By");
 		lblSapXep_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		lblId_1 = new JLabel("ID");
+		lblId_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		textField_4 = new JTextField();
+		textField_4.setEnabled(false);
+		textField_4.setColumns(10);
+		
+		lblCustomersName = new JLabel("Customer's Name");
+		lblCustomersName.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		
+		lblPhoneNumber = new JLabel("Phone Number");
+		lblPhoneNumber.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		textField_6 = new JTextField();
+		textField_6.setEnabled(false);
+		textField_6.setColumns(10);
+		
+		textField_7 = new JTextField();
+		textField_7.setEnabled(false);
+		textField_7.setColumns(10);
+		
+		lblAddress = new JLabel("Address");
+		lblAddress.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		btnNewButton_3 = new JButton("Search");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String Name = textField_5.getText();
+				int count=0;
+				int find=0;
+				for(KhachHang customer: customers) {
+					if(Name.matches(customer.getName())) {
+						
+						textField_4.setText("" + customers.get(count).getId());	
+						textField_6.setText("" + customers.get(count).getPhoneNum());	
+						textField_7.setText("" + customers.get(count).getAddress());
+						textField_8.setText("" + customers.get(count).getEmail());
+						
+						find=4;
+					}count++;
+				
+				}if(find!=4) {
+					JOptionPane.showMessageDialog(rootPane, "Do not have that information");
+					textField_5.setText("");
+				}
+			}
+		});
+		
+		textField_8 = new JTextField();
+		textField_8.setEnabled(false);
+		textField_8.setColumns(10);
+		
+		lblNewLabel_2 = new JLabel("Email");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
 
 		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
 		jPanel2Layout.setHorizontalGroup(
 			jPanel2Layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(jPanel2Layout.createSequentialGroup()
-					.addContainerGap()
 					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-						.addComponent(jScrollPane1_1, GroupLayout.PREFERRED_SIZE, 1381, GroupLayout.PREFERRED_SIZE)
 						.addGroup(jPanel2Layout.createSequentialGroup()
-							.addGap(17)
+							.addGap(29)
 							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
 								.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
 									.addComponent(jLabel1_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -362,60 +513,111 @@ public class HomeFrm extends javax.swing.JFrame implements View {
 									.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 									.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 								.addComponent(lblSapXep_1, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-							.addGap(7)
+							.addGap(120)
 							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
 								.addGroup(jPanel2Layout.createSequentialGroup()
-									.addGap(113)
-									.addComponent(txtTenKH, GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-									.addGap(952))
+									.addComponent(txtTenKH, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+									.addGap(383))
 								.addGroup(jPanel2Layout.createSequentialGroup()
-									.addGap(113)
 									.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
-										.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-										.addComponent(txtDiaChi, GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-										.addComponent(txtPhone, GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+										.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+										.addComponent(txtDiaChi, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+										.addComponent(txtPhone, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
 										.addComponent(comboSortKH, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 247, GroupLayout.PREFERRED_SIZE))
 									.addGap(105)
 									.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
 										.addComponent(btnThemMH_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(btnXoa_1, GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
-									.addGap(739)))))
+									.addGap(170)))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(jPanel2Layout.createSequentialGroup()
+									.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblId_1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+										.addGroup(jPanel2Layout.createSequentialGroup()
+											.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+												.addComponent(lblCustomersName, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+												.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING, false)
+													.addComponent(lblAddress, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+													.addComponent(lblPhoneNumber, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
+												.addComponent(lblNewLabel_2))
+											.addGap(86)
+											.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+												.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+												.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+												.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+												.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+												.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+									.addGap(154))
+								.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(jScrollPane1_1, GroupLayout.DEFAULT_SIZE, 1452, Short.MAX_VALUE)))
 					.addContainerGap())
 		);
 		jPanel2Layout.setVerticalGroup(
 			jPanel2Layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(jPanel2Layout.createSequentialGroup()
 					.addComponent(jScrollPane1_1, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
-					.addGap(33)
-					.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtTenKH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(jLabel1_1))
-					.addGap(21)
-					.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtPhone, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnThemMH_1)
-						.addComponent(lblPhone))
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
 						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addGap(33)
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(txtTenKH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel1_1))
+							.addGap(21)
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(txtPhone, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnThemMH_1)
+								.addComponent(lblPhone))
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+								.addGroup(jPanel2Layout.createSequentialGroup()
+									.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+										.addGroup(jPanel2Layout.createSequentialGroup()
+											.addGap(20)
+											.addComponent(txtDiaChi, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+										.addGroup(jPanel2Layout.createSequentialGroup()
+											.addGap(13)
+											.addComponent(lblNewLabel)))
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblNewLabel_1))
+									.addGap(34)
+									.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(comboSortKH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblSapXep_1)))
+								.addGroup(jPanel2Layout.createSequentialGroup()
+									.addGap(31)
+									.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(btnXoa_1)
+										.addComponent(btnNewButton_3)))))
+						.addGroup(jPanel2Layout.createSequentialGroup()
+							.addGap(52)
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblId_1)
+								.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(31)
+							.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblCustomersName)
+								.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(10)
 							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
 								.addGroup(jPanel2Layout.createSequentialGroup()
 									.addGap(20)
-									.addComponent(txtDiaChi, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+									.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 								.addGroup(jPanel2Layout.createSequentialGroup()
-									.addGap(13)
-									.addComponent(lblNewLabel)))
-							.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addGap(23)
+									.addComponent(lblPhoneNumber)))
+							.addGap(18)
 							.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_1))
-							.addGap(34)
+								.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblAddress))
+							.addGap(18)
 							.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(comboSortKH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblSapXep_1)))
-						.addGroup(jPanel2Layout.createSequentialGroup()
-							.addGap(31)
-							.addComponent(btnXoa_1)))
-					.addContainerGap(110, Short.MAX_VALUE))
+								.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel_2)))))
 		);
 
 		tblKhachHang = new JTable();
@@ -784,6 +986,21 @@ public class HomeFrm extends javax.swing.JFrame implements View {
 	private JTextField txtDate;
 	private JTextField txtMonth;
 	private JTextField txtYear;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JLabel lblId_1;
+	private JTextField textField_4;
+	private JLabel lblCustomersName;
+	private JTextField textField_5;
+	private JLabel lblPhoneNumber;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JLabel lblAddress;
+	private JButton btnNewButton_3;
+	private JTextField textField_8;
+	private JLabel lblNewLabel_2;
 	// End of variables declaration//GEN-END:variables
 
 	@Override
