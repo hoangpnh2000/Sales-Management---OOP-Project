@@ -94,7 +94,16 @@ public class ControllerImp implements Controller {
                     } else if(d1 < d2) {
                         return 1;
                     }
-                }
+                }else if (o1 instanceof HoaDon) {
+                	HoaDon m1 = (HoaDon) o1;
+                	HoaDon m2 = (HoaDon) o2;
+                    float d1 = m1.getTotalPrice();
+                    float d2 =  m2.getTotalPrice();
+                    if(d1 > d2) {
+                        return -1;
+                    } else if(d1 < d2) {
+                        return 1;
+                    }}
                 return 0;
             }
         });

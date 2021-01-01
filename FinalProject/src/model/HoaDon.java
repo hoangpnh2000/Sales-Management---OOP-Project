@@ -20,7 +20,7 @@ public class HoaDon implements Serializable {
     private String date;
     private KhachHang customer;
     private List<Pair<MatHang,Integer>> pairs;
-    private int totalPrice;
+    private float totalPrice;
     private MatHang item;
     private int soLuong;
 
@@ -28,12 +28,7 @@ public class HoaDon implements Serializable {
     	pairs= new ArrayList<>();
     	totalPrice=0;
     }
-    
-
-
-
-
-
+   
 	public HoaDon(KhachHang customer, MatHang item, int soLuong,String date) {
 		super();
 		this.customer = customer;
@@ -42,12 +37,6 @@ public class HoaDon implements Serializable {
 		this.date = date;
 	}
 
-
-
-
-
-
-	
     public List<Pair<MatHang,Integer>> getPairs() {
 		return pairs;
 	}
@@ -80,32 +69,18 @@ public class HoaDon implements Serializable {
         this.date = date;
     }
 
-  
-
- 
-
     public MatHang getItem() {
 		return item;
 	}
-
-
-
-
 
 
 	public void setItem(MatHang item) {
 		this.item = item;
 	}
 
-
-
-
-
-
 	public KhachHang getCustomer() {
 		return customer;
 	}
-
 
 
 	public void setCustomer(KhachHang customer) {
@@ -114,33 +89,25 @@ public class HoaDon implements Serializable {
 
 
 
-	public int getTotalPrice() {
+	public float getTotalPrice() {
     	this.totalPrice=0;
     	/*
     	for(Pair<MatHang,Integer> pair : pairs){
     		this.totalPrice=(int) (pair.getSoLuong()*pair.getMatHang().getPrice());
     	}*/
     	
-        return totalPrice= (int) (item.getPrice()*soLuong);
+        return totalPrice=(item.getPrice()*soLuong);
     }
 
-    public void setTotalPrice(int totalPrice) {
+    public void setTotalPrice(float totalPrice) {
         this.totalPrice = totalPrice;
     }
-
-
-
 
 
 
 	public int getSoLuong() {
 		return soLuong;
 	}
-
-
-
-
-
 
 	public void setSoLuong(int soLuong) {
 		this.soLuong = soLuong;
