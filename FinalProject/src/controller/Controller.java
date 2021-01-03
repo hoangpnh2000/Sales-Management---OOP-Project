@@ -12,13 +12,10 @@ import java.util.List;
  * @author ADMIN
  */
 public interface Controller {
-    <T> boolean writeToFile(List<T> list, String fileName);
-    
-    <T> List<T> readDataFromFile(String fileName);
-    
-    <T> void sortByName(List<T> list);
-    
-    <T> void sortByPrice(List<T> list);
-    
-    <T> List<T> searchByName(List<T> list, String key);
+	<T> boolean writeToFile(List<T> list, String fileName);
+
+	<T> List<T> readDataFromFile(String fileName);
+
+	<T> void sortByPrice(List<T> list);
+
 }
