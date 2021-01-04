@@ -227,82 +227,85 @@ public class HomeFrm extends javax.swing.JFrame implements View {
 		});
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+		jPanel1Layout.setHorizontalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(jPanel1Layout.createSequentialGroup()
-						.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 1464, Short.MAX_VALUE).addContainerGap())
-				.addGroup(jPanel1Layout.createSequentialGroup().addGap(69)
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(jLabel1)
-								.addComponent(jLabel2).addComponent(jLabel3)
-								.addComponent(lblSapXep, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-						.addGap(38)
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(comboSort, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(txtTenMH).addComponent(txtGia)
-								.addComponent(comboNhomHang, 0, 247, Short.MAX_VALUE))
-						.addGap(93)
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING, false)
-								.addComponent(btnThemMH, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(btnXoa, GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
-						.addGap(261)
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblId, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblName, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblType).addComponent(lblPrice))
-						.addGap(86)
-						.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-								.addGroup(jPanel1Layout.createSequentialGroup()
-										.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-										.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 90,
-												GroupLayout.PREFERRED_SIZE)
-										.addGap(95))
-								.addGroup(jPanel1Layout.createSequentialGroup()
-										.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-												.addComponent(textField_3, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(textField_1, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(textField, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-										.addContainerGap(0, Short.MAX_VALUE)))));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel1Layout
-				.createSequentialGroup()
-				.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
-				.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel1Layout.createSequentialGroup().addGap(33)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel1)
-										.addComponent(txtTenMH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE))
-								.addGap(20)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel2)
-										.addComponent(txtGia, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(btnThemMH).addComponent(lblId).addComponent(textField,
-												GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE))
-								.addGap(22)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(jLabel3)
-										.addComponent(comboNhomHang, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(btnXoa).addComponent(lblName)
-										.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE))
-								.addGap(18)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(lblType)
-										.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE))
-								.addGap(5)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING).addComponent(lblSapXep)
-										.addComponent(comboSort, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE))
-								.addGap(10)
-								.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE).addComponent(lblPrice)
-										.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)))
-						.addGroup(jPanel1Layout.createSequentialGroup().addGap(145).addComponent(btnNewButton_2)))
-				.addContainerGap(138, Short.MAX_VALUE)));
+					.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 1464, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addGap(69)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(jLabel1)
+						.addComponent(jLabel2)
+						.addComponent(jLabel3)
+						.addComponent(lblSapXep, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+					.addGap(38)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(comboSort, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(txtTenMH)
+						.addComponent(txtGia)
+						.addComponent(comboNhomHang, 0, 247, Short.MAX_VALUE))
+					.addGap(93)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(btnThemMH, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnXoa, GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+					.addGap(261)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblId, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblName, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblType)
+						.addComponent(lblPrice))
+					.addGap(86)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(textField_2, Alignment.TRAILING)
+						.addComponent(textField_3, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+						.addComponent(textField_1)
+						.addComponent(textField))
+					.addPreferredGap(ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+					.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+					.addGap(95))
+		);
+		jPanel1Layout.setVerticalGroup(
+			jPanel1Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel1Layout.createSequentialGroup()
+					.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
+					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addGap(33)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(jLabel1)
+								.addComponent(txtTenMH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(20)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(jLabel2)
+								.addComponent(txtGia, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnThemMH)
+								.addComponent(lblId)
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(22)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(jLabel3)
+								.addComponent(comboNhomHang, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnXoa)
+								.addComponent(lblName)
+								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(18)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblType)
+								.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(5)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblSapXep)
+								.addComponent(comboSort, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(10)
+							.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblPrice)
+								.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(jPanel1Layout.createSequentialGroup()
+							.addGap(145)
+							.addComponent(btnNewButton_2)))
+					.addContainerGap(138, Short.MAX_VALUE))
+		);
 		jPanel1.setLayout(jPanel1Layout);
 
 		jTabbedPane1.addTab("Product Manager", jPanel1);
@@ -313,399 +316,6 @@ public class HomeFrm extends javax.swing.JFrame implements View {
 				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jTabbedPane1));
 		layout.setVerticalGroup(
 				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jTabbedPane1));
-		jPanel2 = new javax.swing.JPanel();
-
-		JScrollPane jScrollPane1_1 = new JScrollPane();
-
-		txtTenKH = new JTextField();
-
-		JLabel jLabel1_1 = new JLabel();
-		jLabel1_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-		jLabel1_1.setText("Customer's Name");
-
-		JLabel lblPhone = new JLabel();
-		lblPhone.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblPhone.setText("Phone Number");
-
-		txtPhone = new JTextField();
-
-		JButton btnThemMH_1 = new JButton();
-		btnThemMH_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				String tenKH = txtTenKH.getText();
-				String phone = txtPhone.getText();
-				String diaChi = txtDiaChi.getText();
-				String mail = txtEmail.getText();
-				int count = 0;
-				if (tenKH.length() > 0 && phone.length() > 0 && diaChi.length() > 0 && mail.length() > 0) {
-					if (tenKH.matches("[A-Za-z].*?")) {
-
-						if (phone.matches("\\d+")) {
-							for (KhachHang customer : customers) {
-								if (tenKH.matches(customer.getName())) {
-									JOptionPane.showMessageDialog(rootPane, "Name cannot be the same");
-									count = 5;
-								}
-								if (mail.matches(customer.getEmail())) {
-									JOptionPane.showMessageDialog(rootPane, "Mail cannot be the same");
-									count = 3;
-								}
-							}
-							if (count == 0) {
-								KhachHang h = new KhachHang(tenKH, diaChi, mail, phone);
-								customers.add(h);
-								showData(customers, modelKhachHang);
-								controller.writeToFile(customers, "KH.txt");
-							}
-						} else {
-							JOptionPane.showMessageDialog(rootPane, "Phone number just contains a number!");
-						}
-					} else {
-						JOptionPane.showMessageDialog(rootPane, "Error");
-					}
-
-				} else {
-					JOptionPane.showMessageDialog(rootPane, "The box cannot be left blank!");
-				}
-				txtTenKH.setText("");
-				txtPhone.setText("");
-				txtDiaChi.setText("");
-				txtEmail.setText("");
-
-			}
-		});
-		btnThemMH_1.setText("Add");
-
-		JButton btnXoa_1 = new JButton("Delete");
-
-		btnXoa_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				int removeIndex = tblKhachHang.getSelectedRow();
-				if (removeIndex != -1) {
-					customers.remove(removeIndex);
-					showData(customers, modelKhachHang);
-					controller.writeToFile(customers, "KH.txt");
-				} else {
-					JOptionPane.showMessageDialog(rootPane, "Please choose one subject");
-				}
-			}
-		});
-
-		JLabel lblNewLabel = new JLabel("Address");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
-
-		txtDiaChi = new JTextField();
-		txtDiaChi.setColumns(10);
-
-		lblNewLabel_1 = new JLabel("Email");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-
-		txtEmail = new JTextField();
-		txtEmail.setColumns(10);
-
-		comboSortKH = new JComboBox();
-		comboSortKH.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int index = comboSortKH.getSelectedIndex();
-				if (index == 0) {
-					Collections.sort(customers, new Comparator<KhachHang>() {
-
-						@Override
-						public int compare(KhachHang o1, KhachHang o2) {
-							return o1.getName().compareTo(o2.getName());
-						}
-					});
-				}
-				showData(customers, modelKhachHang);
-
-			}
-		});
-		comboSortKH.setModel(new DefaultComboBoxModel(new String[] { "Name" }));
-
-		lblSapXep_1 = new JLabel("Sort By");
-		lblSapXep_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-
-		lblId_1 = new JLabel("ID");
-		lblId_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-
-		textField_4 = new JTextField();
-		textField_4.setEnabled(false);
-		textField_4.setColumns(10);
-
-		lblCustomersName = new JLabel("Customer's Name");
-		lblCustomersName.setFont(new Font("Tahoma", Font.BOLD, 13));
-
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-
-		lblPhoneNumber = new JLabel("Phone Number");
-		lblPhoneNumber.setFont(new Font("Tahoma", Font.BOLD, 13));
-
-		textField_6 = new JTextField();
-		textField_6.setEnabled(false);
-		textField_6.setColumns(10);
-
-		textField_7 = new JTextField();
-		textField_7.setEnabled(false);
-		textField_7.setColumns(10);
-
-		lblAddress = new JLabel("Address");
-		lblAddress.setFont(new Font("Tahoma", Font.BOLD, 13));
-
-		btnNewButton_3 = new JButton("Search");
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String Name = textField_5.getText();
-				int count = 0;
-				int find = 0;
-				for (KhachHang customer : customers) {
-					if (Name.matches(customer.getName())) {
-
-						textField_4.setText("" + customers.get(count).getId());
-						textField_6.setText("" + customers.get(count).getPhoneNum());
-						textField_7.setText("" + customers.get(count).getAddress());
-						textField_8.setText("" + customers.get(count).getEmail());
-
-						find = 4;
-					}
-					count++;
-
-				}
-				if (find != 4) {
-					JOptionPane.showMessageDialog(rootPane, "Do not have that information");
-					textField_5.setText("");
-				}
-			}
-		});
-
-		textField_8 = new JTextField();
-		textField_8.setEnabled(false);
-		textField_8.setColumns(10);
-
-		lblNewLabel_2 = new JLabel("Email");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
-
-		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-		jPanel2Layout
-				.setHorizontalGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-						.addGroup(jPanel2Layout.createSequentialGroup()
-								.addGroup(
-										jPanel2Layout.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout
-												.createSequentialGroup().addGap(29).addGroup(jPanel2Layout
-														.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout
-																.createParallelGroup(Alignment.LEADING, false)
-																.addComponent(jLabel1_1, GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																.addComponent(lblPhone, GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-														.addComponent(
-																lblSapXep_1, GroupLayout.PREFERRED_SIZE, 63,
-																GroupLayout.PREFERRED_SIZE))
-												.addGap(120)
-												.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-														.addGroup(jPanel2Layout.createSequentialGroup()
-																.addComponent(
-																		txtTenKH, GroupLayout.DEFAULT_SIZE, 334,
-																		Short.MAX_VALUE)
-																.addGap(383))
-														.addGroup(jPanel2Layout.createSequentialGroup()
-																.addGroup(jPanel2Layout
-																		.createParallelGroup(Alignment.TRAILING)
-																		.addComponent(
-																				txtEmail, GroupLayout.DEFAULT_SIZE, 334,
-																				Short.MAX_VALUE)
-																		.addComponent(txtDiaChi,
-																				GroupLayout.DEFAULT_SIZE, 334,
-																				Short.MAX_VALUE)
-																		.addComponent(txtPhone,
-																				GroupLayout.DEFAULT_SIZE, 334,
-																				Short.MAX_VALUE)
-																		.addComponent(comboSortKH, Alignment.LEADING,
-																				GroupLayout.PREFERRED_SIZE, 247,
-																				GroupLayout.PREFERRED_SIZE))
-																.addGap(105)
-																.addGroup(jPanel2Layout
-																		.createParallelGroup(Alignment.LEADING, false)
-																		.addComponent(btnThemMH_1,
-																				GroupLayout.DEFAULT_SIZE,
-																				GroupLayout.DEFAULT_SIZE,
-																				Short.MAX_VALUE)
-																		.addComponent(
-																				btnXoa_1, GroupLayout.DEFAULT_SIZE, 108,
-																				Short.MAX_VALUE))
-																.addGap(170)))
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
-														.addGroup(jPanel2Layout.createSequentialGroup()
-																.addGroup(jPanel2Layout
-																		.createParallelGroup(Alignment.LEADING)
-																		.addComponent(
-																				lblId_1, GroupLayout.PREFERRED_SIZE, 45,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addGroup(jPanel2Layout.createSequentialGroup()
-																				.addGroup(jPanel2Layout
-																						.createParallelGroup(
-																								Alignment.LEADING)
-																						.addComponent(lblCustomersName,
-																								GroupLayout.PREFERRED_SIZE,
-																								130,
-																								GroupLayout.PREFERRED_SIZE)
-																						.addGroup(jPanel2Layout
-																								.createParallelGroup(
-																										Alignment.TRAILING,
-																										false)
-																								.addComponent(
-																										lblAddress,
-																										Alignment.LEADING,
-																										GroupLayout.DEFAULT_SIZE,
-																										GroupLayout.DEFAULT_SIZE,
-																										Short.MAX_VALUE)
-																								.addComponent(
-																										lblPhoneNumber,
-																										Alignment.LEADING,
-																										GroupLayout.DEFAULT_SIZE,
-																										102,
-																										Short.MAX_VALUE))
-																						.addComponent(lblNewLabel_2))
-																				.addGap(86)
-																				.addGroup(jPanel2Layout
-																						.createParallelGroup(
-																								Alignment.LEADING)
-																						.addComponent(textField_5,
-																								GroupLayout.PREFERRED_SIZE,
-																								GroupLayout.DEFAULT_SIZE,
-																								GroupLayout.PREFERRED_SIZE)
-																						.addComponent(textField_8,
-																								GroupLayout.PREFERRED_SIZE,
-																								GroupLayout.DEFAULT_SIZE,
-																								GroupLayout.PREFERRED_SIZE)
-																						.addComponent(textField_7,
-																								GroupLayout.PREFERRED_SIZE,
-																								GroupLayout.DEFAULT_SIZE,
-																								GroupLayout.PREFERRED_SIZE)
-																						.addComponent(textField_6,
-																								GroupLayout.PREFERRED_SIZE,
-																								GroupLayout.DEFAULT_SIZE,
-																								GroupLayout.PREFERRED_SIZE)
-																						.addComponent(textField_4,
-																								GroupLayout.PREFERRED_SIZE,
-																								GroupLayout.DEFAULT_SIZE,
-																								GroupLayout.PREFERRED_SIZE))))
-																.addGap(154))
-														.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 90,
-																GroupLayout.PREFERRED_SIZE)))
-												.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap()
-														.addComponent(jScrollPane1_1, GroupLayout.DEFAULT_SIZE, 1452,
-																Short.MAX_VALUE)))
-								.addContainerGap()));
-		jPanel2Layout
-				.setVerticalGroup(
-						jPanel2Layout.createParallelGroup(Alignment.LEADING)
-								.addGroup(jPanel2Layout.createSequentialGroup()
-										.addComponent(jScrollPane1_1, GroupLayout.PREFERRED_SIZE, 249,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addGroup(jPanel2Layout
-												.createParallelGroup(Alignment.LEADING).addGroup(jPanel2Layout
-														.createSequentialGroup().addGap(33).addGroup(jPanel2Layout
-																.createParallelGroup(Alignment.BASELINE)
-																.addComponent(txtTenKH, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.PREFERRED_SIZE)
-																.addComponent(jLabel1_1))
-														.addGap(21)
-														.addGroup(jPanel2Layout
-																.createParallelGroup(Alignment.BASELINE)
-																.addComponent(
-																		txtPhone, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.PREFERRED_SIZE)
-																.addComponent(btnThemMH_1).addComponent(lblPhone))
-														.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-																.addGroup(jPanel2Layout.createSequentialGroup()
-																		.addGroup(jPanel2Layout
-																				.createParallelGroup(Alignment.LEADING)
-																				.addGroup(jPanel2Layout
-																						.createSequentialGroup()
-																						.addGap(20).addComponent(
-																								txtDiaChi,
-																								GroupLayout.PREFERRED_SIZE,
-																								GroupLayout.DEFAULT_SIZE,
-																								GroupLayout.PREFERRED_SIZE))
-																				.addGroup(jPanel2Layout
-																						.createSequentialGroup()
-																						.addGap(13)
-																						.addComponent(lblNewLabel)))
-																		.addPreferredGap(ComponentPlacement.UNRELATED)
-																		.addGroup(jPanel2Layout
-																				.createParallelGroup(Alignment.BASELINE)
-																				.addComponent(txtEmail,
-																						GroupLayout.PREFERRED_SIZE,
-																						GroupLayout.DEFAULT_SIZE,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addComponent(lblNewLabel_1))
-																		.addGap(34)
-																		.addGroup(jPanel2Layout
-																				.createParallelGroup(Alignment.BASELINE)
-																				.addComponent(comboSortKH,
-																						GroupLayout.PREFERRED_SIZE,
-																						GroupLayout.DEFAULT_SIZE,
-																						GroupLayout.PREFERRED_SIZE)
-																				.addComponent(lblSapXep_1)))
-																.addGroup(jPanel2Layout.createSequentialGroup()
-																		.addGap(31)
-																		.addGroup(jPanel2Layout
-																				.createParallelGroup(Alignment.BASELINE)
-																				.addComponent(btnXoa_1)
-																				.addComponent(btnNewButton_3)))))
-												.addGroup(jPanel2Layout.createSequentialGroup().addGap(52)
-														.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
-																.addComponent(lblId_1).addComponent(textField_4,
-																		GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.PREFERRED_SIZE))
-														.addGap(31)
-														.addGroup(jPanel2Layout
-																.createParallelGroup(Alignment.BASELINE)
-																.addComponent(lblCustomersName)
-																.addComponent(textField_5, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.PREFERRED_SIZE))
-														.addGap(10)
-														.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-																.addGroup(jPanel2Layout.createSequentialGroup()
-																		.addGap(20).addComponent(textField_6,
-																				GroupLayout.PREFERRED_SIZE,
-																				GroupLayout.DEFAULT_SIZE,
-																				GroupLayout.PREFERRED_SIZE))
-																.addGroup(jPanel2Layout.createSequentialGroup()
-																		.addGap(23).addComponent(lblPhoneNumber)))
-														.addGap(18)
-														.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
-																.addComponent(textField_7, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.PREFERRED_SIZE)
-																.addComponent(lblAddress))
-														.addGap(18)
-														.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
-																.addComponent(textField_8, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.PREFERRED_SIZE)
-																.addComponent(lblNewLabel_2))))));
-
-		tblKhachHang = new JTable();
-		tblKhachHang.setModel(new DefaultTableModel(new Object[][] { { null, null, null, "", null }, },
-				new String[] { "ID", "Customer's Name", "Phone Number", "Address", "Email" }));
-		jScrollPane1_1.setViewportView(tblKhachHang);
-		jPanel2.setLayout(jPanel2Layout);
-
-		jTabbedPane1.addTab("Customer Manager", jPanel2);
 
 		panel = new JPanel();
 		jTabbedPane1.addTab("Receipt Manager", null, panel, null);
@@ -925,6 +535,302 @@ public class HomeFrm extends javax.swing.JFrame implements View {
 		lblSapXep_1_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblSapXep_1_1.setBounds(698, 537, 63, 16);
 		panel.add(lblSapXep_1_1);
+		jPanel2 = new javax.swing.JPanel();
+		
+				JScrollPane jScrollPane1_1 = new JScrollPane();
+				
+						txtTenKH = new JTextField();
+						
+								JLabel jLabel1_1 = new JLabel();
+								jLabel1_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+								jLabel1_1.setText("Customer's Name");
+								
+										JLabel lblPhone = new JLabel();
+										lblPhone.setFont(new Font("Tahoma", Font.BOLD, 13));
+										lblPhone.setText("Phone Number");
+										
+												txtPhone = new JTextField();
+												
+														JButton btnThemMH_1 = new JButton();
+														btnThemMH_1.addActionListener(new ActionListener() {
+															public void actionPerformed(ActionEvent e) {
+
+																String tenKH = txtTenKH.getText();
+																String phone = txtPhone.getText();
+																String diaChi = txtDiaChi.getText();
+																String mail = txtEmail.getText();
+																int count = 0;
+																if (tenKH.length() > 0 && phone.length() > 0 && diaChi.length() > 0 && mail.length() > 0) {
+																	if (tenKH.matches("[A-Za-z].*?")) {
+
+																		if (phone.matches("\\d+")) {
+																			for (KhachHang customer : customers) {
+																				if (tenKH.matches(customer.getName())) {
+																					JOptionPane.showMessageDialog(rootPane, "Name cannot be the same");
+																					count = 5;
+																				}
+																				if (mail.matches(customer.getEmail())) {
+																					JOptionPane.showMessageDialog(rootPane, "Mail cannot be the same");
+																					count = 3;
+																				}
+																			}
+																			if (count == 0) {
+																				KhachHang h = new KhachHang(tenKH, diaChi, mail, phone);
+																				customers.add(h);
+																				showData(customers, modelKhachHang);
+																				controller.writeToFile(customers, "KH.txt");
+																			}
+																		} else {
+																			JOptionPane.showMessageDialog(rootPane, "Phone number just contains a number!");
+																		}
+																	} else {
+																		JOptionPane.showMessageDialog(rootPane, "Error");
+																	}
+
+																} else {
+																	JOptionPane.showMessageDialog(rootPane, "The box cannot be left blank!");
+																}
+																txtTenKH.setText("");
+																txtPhone.setText("");
+																txtDiaChi.setText("");
+																txtEmail.setText("");
+
+															}
+														});
+														btnThemMH_1.setText("Add");
+														
+																JButton btnXoa_1 = new JButton("Delete");
+																
+																		btnXoa_1.addActionListener(new ActionListener() {
+																			public void actionPerformed(ActionEvent e) {
+																
+																				int removeIndex = tblKhachHang.getSelectedRow();
+																				if (removeIndex != -1) {
+																					customers.remove(removeIndex);
+																					showData(customers, modelKhachHang);
+																					controller.writeToFile(customers, "KH.txt");
+																				} else {
+																					JOptionPane.showMessageDialog(rootPane, "Please choose one subject");
+																				}
+																			}
+																		});
+																		
+																				JLabel lblNewLabel = new JLabel("Address");
+																				lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+																				
+																						txtDiaChi = new JTextField();
+																						txtDiaChi.setColumns(10);
+																						
+																								lblNewLabel_1 = new JLabel("Email");
+																								lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+																								
+																										txtEmail = new JTextField();
+																										txtEmail.setColumns(10);
+																										
+																												comboSortKH = new JComboBox();
+																												comboSortKH.addActionListener(new ActionListener() {
+																													public void actionPerformed(ActionEvent e) {
+																														int index = comboSortKH.getSelectedIndex();
+																														if (index == 0) {
+																															Collections.sort(customers, new Comparator<KhachHang>() {
+
+																																@Override
+																																public int compare(KhachHang o1, KhachHang o2) {
+																																	return o1.getName().compareTo(o2.getName());
+																																}
+																															});
+																														}
+																														showData(customers, modelKhachHang);
+
+																													}
+																												});
+																												comboSortKH.setModel(new DefaultComboBoxModel(new String[] { "Name" }));
+																												
+																														lblSapXep_1 = new JLabel("Sort By");
+																														lblSapXep_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+																														
+																																lblId_1 = new JLabel("ID");
+																																lblId_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+																																
+																																		textField_4 = new JTextField();
+																																		textField_4.setEnabled(false);
+																																		textField_4.setColumns(10);
+																																		
+																																				lblCustomersName = new JLabel("Customer's Name");
+																																				lblCustomersName.setFont(new Font("Tahoma", Font.BOLD, 13));
+																																				
+																																						textField_5 = new JTextField();
+																																						textField_5.setColumns(10);
+																																						
+																																								lblPhoneNumber = new JLabel("Phone Number");
+																																								lblPhoneNumber.setFont(new Font("Tahoma", Font.BOLD, 13));
+																																								
+																																										textField_6 = new JTextField();
+																																										textField_6.setEnabled(false);
+																																										textField_6.setColumns(10);
+																																										
+																																												textField_7 = new JTextField();
+																																												textField_7.setEnabled(false);
+																																												textField_7.setColumns(10);
+																																												
+																																														lblAddress = new JLabel("Address");
+																																														lblAddress.setFont(new Font("Tahoma", Font.BOLD, 13));
+																																														
+																																																btnNewButton_3 = new JButton("Search");
+																																																btnNewButton_3.addActionListener(new ActionListener() {
+																																																	public void actionPerformed(ActionEvent e) {
+																																																		String Name = textField_5.getText();
+																																																		int count = 0;
+																																																		int find = 0;
+																																																		for (KhachHang customer : customers) {
+																																																			if (Name.matches(customer.getName())) {
+
+																																																				textField_4.setText("" + customers.get(count).getId());
+																																																				textField_6.setText("" + customers.get(count).getPhoneNum());
+																																																				textField_7.setText("" + customers.get(count).getAddress());
+																																																				textField_8.setText("" + customers.get(count).getEmail());
+
+																																																				find = 4;
+																																																			}
+																																																			count++;
+
+																																																		}
+																																																		if (find != 4) {
+																																																			JOptionPane.showMessageDialog(rootPane, "Do not have that information");
+																																																			textField_5.setText("");
+																																																		}
+																																																	}
+																																																});
+																																																
+																																																		textField_8 = new JTextField();
+																																																		textField_8.setEnabled(false);
+																																																		textField_8.setColumns(10);
+																																																		
+																																																				lblNewLabel_2 = new JLabel("Email");
+																																																				lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
+																																																				
+																																																						javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+																																																						jPanel2Layout.setHorizontalGroup(
+																																																							jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																								.addGroup(jPanel2Layout.createSequentialGroup()
+																																																									.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																										.addGroup(jPanel2Layout.createSequentialGroup()
+																																																											.addGap(29)
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																												.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
+																																																													.addComponent(jLabel1_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																													.addComponent(lblPhone, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																													.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																													.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+																																																												.addComponent(lblSapXep_1, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+																																																											.addGap(120)
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																												.addGroup(jPanel2Layout.createSequentialGroup()
+																																																													.addComponent(txtTenKH, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+																																																													.addGap(383))
+																																																												.addGroup(jPanel2Layout.createSequentialGroup()
+																																																													.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+																																																														.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+																																																														.addComponent(txtDiaChi, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+																																																														.addComponent(txtPhone, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+																																																														.addComponent(comboSortKH, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 247, GroupLayout.PREFERRED_SIZE))
+																																																													.addGap(105)
+																																																													.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
+																																																														.addComponent(btnThemMH_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																														.addComponent(btnXoa_1, GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+																																																													.addGap(170)))
+																																																											.addPreferredGap(ComponentPlacement.RELATED)
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING)
+																																																												.addGroup(jPanel2Layout.createSequentialGroup()
+																																																													.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																														.addComponent(lblCustomersName, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+																																																														.addGroup(jPanel2Layout.createParallelGroup(Alignment.TRAILING, false)
+																																																															.addComponent(lblAddress, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																																																															.addComponent(lblPhoneNumber, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
+																																																														.addComponent(lblNewLabel_2)
+																																																														.addComponent(lblId_1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
+																																																													.addGap(38)
+																																																													.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
+																																																														.addComponent(textField_8, GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+																																																														.addComponent(textField_4)
+																																																														.addComponent(textField_5)
+																																																														.addComponent(textField_6)
+																																																														.addComponent(textField_7))
+																																																													.addGap(100))
+																																																												.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)))
+																																																										.addGroup(jPanel2Layout.createSequentialGroup()
+																																																											.addContainerGap()
+																																																											.addComponent(jScrollPane1_1, GroupLayout.DEFAULT_SIZE, 1452, Short.MAX_VALUE)))
+																																																									.addContainerGap())
+																																																						);
+																																																						jPanel2Layout.setVerticalGroup(
+																																																							jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																								.addGroup(jPanel2Layout.createSequentialGroup()
+																																																									.addComponent(jScrollPane1_1, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
+																																																									.addPreferredGap(ComponentPlacement.RELATED)
+																																																									.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																										.addGroup(jPanel2Layout.createSequentialGroup()
+																																																											.addGap(33)
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+																																																												.addComponent(txtTenKH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+																																																												.addComponent(jLabel1_1))
+																																																											.addGap(21)
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+																																																												.addComponent(txtPhone, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+																																																												.addComponent(btnThemMH_1)
+																																																												.addComponent(lblPhone))
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																												.addGroup(jPanel2Layout.createSequentialGroup()
+																																																													.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																														.addGroup(jPanel2Layout.createSequentialGroup()
+																																																															.addGap(20)
+																																																															.addComponent(txtDiaChi, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+																																																														.addGroup(jPanel2Layout.createSequentialGroup()
+																																																															.addGap(13)
+																																																															.addComponent(lblNewLabel)))
+																																																													.addPreferredGap(ComponentPlacement.UNRELATED)
+																																																													.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+																																																														.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+																																																														.addComponent(lblNewLabel_1))
+																																																													.addGap(34)
+																																																													.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+																																																														.addComponent(comboSortKH, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+																																																														.addComponent(lblSapXep_1)))
+																																																												.addGroup(jPanel2Layout.createSequentialGroup()
+																																																													.addGap(31)
+																																																													.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+																																																														.addComponent(btnXoa_1)
+																																																														.addComponent(btnNewButton_3)))))
+																																																										.addGroup(jPanel2Layout.createSequentialGroup()
+																																																											.addGap(52)
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+																																																												.addComponent(lblId_1)
+																																																												.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+																																																											.addGap(29)
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																												.addComponent(lblCustomersName)
+																																																												.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+																																																											.addGap(33)
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+																																																												.addComponent(lblPhoneNumber)
+																																																												.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+																																																											.addGap(18)
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+																																																												.addComponent(lblAddress)
+																																																												.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+																																																											.addGap(18)
+																																																											.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+																																																												.addComponent(lblNewLabel_2)
+																																																												.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))))
+																																																						);
+																																																						
+																																																								tblKhachHang = new JTable();
+																																																								tblKhachHang.setModel(new DefaultTableModel(new Object[][] { { null, null, null, "", null }, },
+																																																										new String[] { "ID", "Customer's Name", "Phone Number", "Address", "Email" }));
+																																																								jScrollPane1_1.setViewportView(tblKhachHang);
+																																																								jPanel2.setLayout(jPanel2Layout);
+																																																								
+																																																										jTabbedPane1.addTab("Customer Manager", jPanel2);
 
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
